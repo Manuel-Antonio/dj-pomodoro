@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Pomodoro History</title>
+</head>
+<body>
+    <h1>History</h1>
+    <ul>
+        {% for session in sessions %}
+        <li>{{ session.task_name }} - {{ session.duration }} min ({{ session.completed_at }})</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'index' %}">Back to Timer</a>
+</body>
+</html>

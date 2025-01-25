@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Pomodoro Timer</title>
+</head>
+<body>
+    <h1>Pomodoro Timer</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="task_name" placeholder="Task Name" required>
+        <input type="number" name="duration" placeholder="Duration (min)" required>
+        <button type="submit">Start</button>
+    </form>
+    <a href="{% url 'history' %}">View History</a>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
